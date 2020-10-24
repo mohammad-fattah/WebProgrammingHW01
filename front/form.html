@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
     <title>Homework 1</title>
@@ -9,63 +9,74 @@
 <body>
 
     <div style="padding: 10px 10px 10px 10px;">
-        
+
         <div class="ui segment">
-            <div class="ui form">
+            <form class="ui form" id="sha_form">
                 <header class="ui header">SHA256</header>
                 <div class="three fields">
                     <div class="field">
-                        <div class="ui input">
-                            <input type="text" placeholder="1'st Number">
-                        </div>
+                        <input type="number" name="M" placeholder="1'st Number">
                     </div>
                     <div class="field">
-                        <div class="ui input">
-                            <input type="text" placeholder="2'nd Number">
-                        </div>
+                        <input type="number" name="N" placeholder="2'nd Number">
                     </div>
                     <div class="field">
                         <div class="ui buttons">
-                            <button class="ui left floated blue button">Go !</button>
+                            <buttom class="ui blue button" onclick="sha('go')">Go</buttom>
                             <div class="or"></div>
-                            <button class="ui right floated yellow button">Node</button>
+                            <buttom class="ui yellow button" onclick="sha('node')">Node</buttom>
                         </div>
                     </div>
                 </div>
-                <div class="filed">
-                    <label class="ui large label" id="sha_awnser">
-                        sha_awnser
+                <div class="field">
+                    <label class="ui large label" id="sha_answer">
+                        Answer will be shown here
                     </label>
-
                 </div>
-            </div>
+                <script>
+                    function sha(lang) {
+                        var data = new FormData(document.getElementById("sha_form"))
+                        var values = data.values()
+                        data.values().forEach(element => {
+                            alert(element)
+                        });  
+                    }
+                </script>
+            </form>
         </div>
 
         <div class="ui segment">
 
-            <div class="ui form">
+            <form class="ui form" id="write_form">
                 <div class="ui header">Write</div>
                 <div class="two fields">
                     <div class="field">
-                        <div class="ui input">
-                            <input type="text" placeholder="Line index">
-                        </div>
+                        <input type="text" placeholder="Line index">
                     </div>
                     <div class="field">
                         <div class="ui buttons">
-                            <button class="ui left floated blue button">Go !</button>
+                            <input class="ui left floated blue button" value="Go" type="submit" onclick="goWrite()">
                             <div class="or"></div>
-                            <button class="ui right floated yellow button">Node</button>
+                            <input class="ui right floated yellow button" value="Node" type="submit"
+                                onclick="nodeWrite()">
                         </div>
                     </div>
                 </div>
-                <div class="filed">
-                    <label class="ui large label" id="write_awnser">
+                <div class="field">
+                    <label class="ui large label" id="write_answer">
                         this is line 1 2 3 4 . . . . 1 2 3 4
                     </label>
                 </div>
-            </div>
+                <script>
+                    function goWrite() {
+                        alert('go write')
+                    }
+                    function nodeWrite() {
+                        alert('node write')
+                    }
+                </script>
         </div>
+    </div>
 
     </div>
 
