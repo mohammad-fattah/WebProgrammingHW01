@@ -15,5 +15,14 @@ app.post('/nodejs/sha', (req, res) => {
     res.send(response);
 })
 
+
+app.get('/nodejs/write/:id', (req, res) => {
+    const response = {
+        result :  String(fileText[req.params.id - 1]).replace('\r','')
+    };
+
+    res.send(hash.createHash('sha256').update(String(response)).digest('base64'));
+})
+
 const port = 3000;
 app.listen(port, () => console.log(`listenin on port ${port}...`))
