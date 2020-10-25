@@ -24,7 +24,7 @@
                         <div class="ui buttons">
                             <buttom class="ui blue button" onclick="sha('go')">Go</buttom>
                             <div class="or"></div>
-                            <buttom class="ui yellow button" onclick="sha('node')">Node</buttom>
+                            <buttom class="ui yellow button" onclick="sha('nodejs')">Node</buttom>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 </div>
                 <script>
                     function sha(lang) {
-                        document.getElementById("sha_answer").innerHTML = "YEssss"
+                        document.getElementById("sha_answer").innerHTML = lang
                     }
                 </script>
             </form>
@@ -51,10 +51,9 @@
                     </div>
                     <div class="field">
                         <div class="ui buttons">
-                            <input class="ui left floated blue button" value="Go" type="submit" onclick="goWrite()">
+                            <buttom class="ui left floated blue button" onclick="writeIndexedLine('go')">Go</buttom>
                             <div class="or"></div>
-                            <input class="ui right floated yellow button" value="Node" type="submit"
-                                onclick="nodeWrite()">
+                            <buttom class="ui right floated yellow button" onclick="writeIndexedLine('nodejs')">Node</buttom>
                         </div>
                     </div>
                 </div>
@@ -64,13 +63,11 @@
                     </label>
                 </div>
                 <script>
-                    function goWrite() {
-                        alert('go write')
-                    }
-                    function nodeWrite() {
-                        alert('node write')
+                    function writeIndexedLine(lang) {
+                        document.getElementById("write_answer").innerHTML = lang
                     }
                 </script>
+            </form>
         </div>
     </div>
 
