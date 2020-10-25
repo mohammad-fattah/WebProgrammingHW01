@@ -57,7 +57,7 @@ func serveSHA(w http.ResponseWriter, r *http.Request) {
 }
 
 func getLine(i int) string {
-	data, err := ioutil.ReadFile("Test.txt")
+	data, err := ioutil.ReadFile("database/lines.txt")
 	if err != nil {
 		return "Error: File is not accessible"
 	}
