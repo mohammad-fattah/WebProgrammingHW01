@@ -1,0 +1,32 @@
+body {
+    background-image: linear-gradient(to right, #00aed9, #83cd29);
+}
+
+.ui.segment {
+    border-radius: 10px;
+    background: #e0e0e0;
+}
+
+.ui.green.button{
+    background-color:  #83cd29 ;
+}
+
+.ui.green.button :hover{
+    background-color:  #83cd29 ;
+}
+
+#write_answer, #sha_answer{
+    border-radius: 3px;
+    background: #e0e0e0;
+    box-shadow: inset 5px 5px 10px #d3d3d3, 
+            inset -5px -5px 10px #ededed;
+    height: 120%;
+}
+
+#line_input {
+    width: 100%;
+}
+
+#main-div {
+    padding: 35px 30px;
+}

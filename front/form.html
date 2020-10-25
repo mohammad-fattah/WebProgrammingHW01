@@ -4,12 +4,12 @@
 <head>
     <title>Homework 1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div style="padding: 10px 10px 10px 10px;">
-
+    <div id="main-div">
         <div class="ui segment">
             <form class="ui form" id="sha_form">
                 <header class="ui header">SHA256</header>
@@ -24,7 +24,7 @@
                         <div class="ui buttons">
                             <buttom class="ui blue button" onclick="sha('go')">Go</buttom>
                             <div class="or"></div>
-                            <buttom class="ui yellow button" onclick="sha('nodejs')">Node</buttom>
+                            <buttom class="ui green button" onclick="sha('nodejs')">Node</buttom>
                         </div>
                     </div>
                 </div>
@@ -33,11 +33,6 @@
                         Answer will be shown here
                     </label>
                 </div>
-                <script>
-                    function sha(lang) {
-                        document.getElementById("sha_answer").innerHTML = lang
-                    }
-                </script>
             </form>
         </div>
 
@@ -46,14 +41,14 @@
             <form class="ui form" id="write_form">
                 <div class="ui header">Write</div>
                 <div class="two fields">
-                    <div class="field">
+                    <div class="field" id="line_input">
                         <input type="text" placeholder="Line index">
                     </div>
                     <div class="field">
                         <div class="ui buttons">
                             <buttom class="ui left floated blue button" onclick="writeIndexedLine('go')">Go</buttom>
                             <div class="or"></div>
-                            <buttom class="ui right floated yellow button" onclick="writeIndexedLine('nodejs')">Node</buttom>
+                            <buttom class="ui right floated green button" onclick="writeIndexedLine('nodejs')">Node</buttom>
                         </div>
                     </div>
                 </div>
@@ -62,19 +57,16 @@
                         this is line 1 2 3 4 . . . . 1 2 3 4
                     </label>
                 </div>
-                <script>
-                    function writeIndexedLine(lang) {
-                        document.getElementById("write_answer").innerHTML = lang
-                    }
-                </script>
             </form>
         </div>
     </div>
 
     </div>
 
+    <script src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
 </body>
 
 </html>
