@@ -1,0 +1,18 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "nodejs server",
+  "main": "app.js",
+  "dependencies": {
+    "eslint": "^7.11.0",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "read-nth-line": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
