@@ -1,0 +1,11 @@
+[Unit]
+Description=go-app
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=2s
+ExecStart=/root/WebProgrammingHW01/go/main
+
+[Install]
+WantedBy=multi-user.target
