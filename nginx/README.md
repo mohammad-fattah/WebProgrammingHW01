@@ -2,7 +2,7 @@
 This web server in Nginx-based. Here is Instruction how to deploy.
 # How to deploy
 1. Install Nginx.
-2. set these locations in `/etc/nginx/nginx.conf` using `nano` command
+2. set these locations in `/etc/nginx/nginx.conf` using command `nano`
 ```
 location / {
     root /root/project/WebProgrammingHW01/front;
