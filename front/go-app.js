@@ -7,7 +7,7 @@ async function writeIndexedLineGo() {
     }
 
     console.log(lineNumber);
-    const line = await fetch(`/go/write/?Line=${lineNumber}`)
+    const line = await fetch(`/go/write?Line=${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
             console.log(data);
@@ -35,7 +35,7 @@ async function shaGo() {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-            document.getElementById("sha_answer").innerHTML = data.sha;
+            document.getElementById("sha_answer").innerHTML = data.answer;
         })
         .catch((error) => {
             document.getElementById("sha_answer").innerHTML =
