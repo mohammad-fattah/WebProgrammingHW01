@@ -1,4 +1,4 @@
-function writeIndexedLineGo() {
+async function writeIndexedLineGo() {
     let lineNumber = document.getElementById("LineNumber").value;
     if (lineNumber < 1 || lineNumber > 100) {
         document.getElementById("write_answer").innerHTML =
@@ -7,8 +7,7 @@ function writeIndexedLineGo() {
     }
 
     console.log(lineNumber);
-    const line = await fetch(
-        `/go/write/?Line=${lineNumber}`)
+    const line = await fetch(`/go/write/?Line=${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
             console.log(data);
@@ -20,7 +19,7 @@ function writeIndexedLineGo() {
         });
 }
 
-function shaGo() {
+async function shaGo() {
     let firstNumber = document.getElementById("M").value;
     let secondNumber = document.getElementById("N").value;
 
