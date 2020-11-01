@@ -29,8 +29,8 @@ async function shaNodeJs() {
     let secondNumber = document.getElementById("N").value;
 
     const request = {
-        number1: firstNumber,
-        number2: secondNumber,
+        first: firstNumber,
+        second: secondNumber,
     };
 
     const line = await fetch(`http://192.168.1.105/nodejs/sha`, {

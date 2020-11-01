@@ -8,15 +8,17 @@ fs.readFile(
 
 const hash = require("crypto");
 const express = require("express");
+const { request } = require("express");
 const app = express();
 
 app.use(express.json());
 
 app.post("/nodejs/sha", (req, res) => {
     const response = {
-        result: req.body.number1 + req.body.number2,
+        result: req.body.first + req.body.second,
     };
 
+    console.log(request.body);
     console.log(response.result);
 
     res.send({
