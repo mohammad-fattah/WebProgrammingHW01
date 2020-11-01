@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.post("/nodejs/sha", (req, res) => {
     const response = {
-        result: req.body.first + req.body.second,
+        result: req.body.number1 + req.body.number2,
     };
 
     console.log(response.result);
