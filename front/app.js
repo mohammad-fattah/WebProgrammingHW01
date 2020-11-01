@@ -1,17 +1,17 @@
-import axios from 'axios'
-
 function writeIndexedLineGo() {
     let lineNumber = document.getElementById("LineNumber").value;
-    if (lineNumber < 1  || lineNumber > 100) {
-        document.getElementById("write_answer").innerHTML = "Please enter a number between 1 and 100.";
+    if (lineNumber < 1 || lineNumber > 100) {
+        document.getElementById("write_answer").innerHTML =
+            "Please enter a number between 1 and 100.";
         return;
     }
     let request = new XMLHttpRequest();
-    request.open('POST', '/go/write?Line=' + lineNumber, true);
+    request.open("POST", "/go/write?Line=" + lineNumber, true);
     request.onreadystatechange = function () {
-        let res = this.response.JSON
-        document.getElementById("sha_answer").innerHTML = res["Answer"] + res["Error"]
-    }
+        let res = this.response.JSON;
+        document.getElementById("sha_answer").innerHTML =
+            res["Answer"] + res["Error"];
+    };
     request.send(requestBody);
 }
 
@@ -20,39 +20,17 @@ function shaGo() {
     requestBody["M"] = document.getElementById("M").value;
     requestBody["N"] = document.getElementById("N").value;
     if (requestBody["M"] == "" || requestBody["N"] == "") {
-        document.getElementById("sha_answer").innerHTML = "Please enter two numbers.";
+        document.getElementById("sha_answer").innerHTML =
+            "Please enter two numbers.";
         return;
     }
     requestBody = JSON.stringify(requestBody);
     let request = new XMLHttpRequest();
-    request.open('POST', '/go/sha', true);
+    request.open("POST", "/go/sha", true);
     request.onreadystatechange = function () {
-        let res = this.response.JSON
-        document.getElementById("sha_answer").innerHTML = res["Answer"] + res["Error"]
-    }
+        let res = this.response.JSON;
+        document.getElementById("sha_answer").innerHTML =
+            res["Answer"] + res["Error"];
+    };
     request.send(requestBody);
-}
-
-
-async function writeIndexedLineNodeJs() {
-    let lineNumber = document.getElementById("LineNumber").value;
-    if (lineNumber < 1  || lineNumber > 100) {
-        document.getElementById("write_answer").innerHTML = "Please enter a number between 1 and 100.";
-        return;
-    }
-
-    const  { data : line} = await axios.get(
-        `http://192.168.1.105/nodejs/write/${lineNumber}`
-    );
-
-    document.getElementById('write_answer').innerHTML = data;
-
-
-    // let request = new XMLHttpRequest();
-    // request.open('POST', '/go/write?Line=' + lineNumber, true);
-    // request.onreadystatechange = function () {
-    //     let res = this.response.JSON
-    //     document.getElementById("sha_answer").innerHTML = res["Answer"] + res["Error"]
-    // }
-    // request.send(requestBody);
 }
