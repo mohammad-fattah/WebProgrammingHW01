@@ -12,7 +12,7 @@ app.post('/nodejs/sha', (req, res) => {
     const response = {
         result : req.body.first + req.body.second
     };
-    res.send(hash.createHash('sha256').update(String(response.result)).digest('base64'));
+    res.send({sha : hash.createHash('sha256').update(String(response.result)).digest('base64')});
 })
 
 
@@ -20,7 +20,7 @@ app.get('/nodejs/write/:id', (req, res) => {
     const response = {
         result :  String(fileText[req.params.id - 1]).replace('\r','')
     };
-
+    
     res.send(response.result);
 })
 
