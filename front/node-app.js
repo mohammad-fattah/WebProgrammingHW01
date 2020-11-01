@@ -7,12 +7,7 @@ async function writeIndexedLineNodeJs() {
     }
 
     console.log(lineNumber);
-    const line = await fetch(
-        `http://192.168.1.105/nodejs/write/${lineNumber}`,
-        {
-            mode: "no-cors",
-        }
-    )
+    const line = await fetch(`/nodejs/write/${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
             console.log(data);
@@ -33,8 +28,7 @@ async function shaNodeJs() {
         second: secondNumber,
     };
 
-    const line = await fetch(`http://192.168.1.105/nodejs/sha`, {
-        mode: "no-cors",
+    const line = await fetch(`/nodejs/sha`, {
         method: "POST",
         body: JSON.stringify(request),
     })

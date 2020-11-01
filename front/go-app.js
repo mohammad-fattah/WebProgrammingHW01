@@ -8,11 +8,7 @@ function writeIndexedLineGo() {
 
     console.log(lineNumber);
     const line = await fetch(
-        `http://192.168.1.105/go/write/?Line=${lineNumber}`,
-        {
-            mode: "no-cors",
-        }
-    )
+        `/go/write/?Line=${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
             console.log(data);
@@ -33,8 +29,7 @@ function shaGo() {
         N: secondNumber,
     };
 
-    const line = await fetch(`http://192.168.1.105/go/sha`, {
-        mode: "no-cors",
+    const line = await fetch(`/go/sha`, {
         method: "POST",
         body: JSON.stringify(request),
     })

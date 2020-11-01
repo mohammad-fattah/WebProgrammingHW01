@@ -21,9 +21,6 @@ app.post("/nodejs/sha", (req, res) => {
         result: req.body.first + req.body.second,
     };
 
-    console.log(request.body);
-    console.log(response.result);
-
     res.send({
         sha: hash
             .createHash("sha256")
