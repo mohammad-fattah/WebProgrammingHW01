@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 function writeIndexedLineGo() {
     let lineNumber = document.getElementById("LineNumber").value;
     if (lineNumber < 1  || lineNumber > 100) {
@@ -29,4 +31,28 @@ function shaGo() {
         document.getElementById("sha_answer").innerHTML = res["Answer"] + res["Error"]
     }
     request.send(requestBody);
+}
+
+
+function writeIndexedLineNodeJs() {
+    let lineNumber = document.getElementById("LineNumber").value;
+    if (lineNumber < 1  || lineNumber > 100) {
+        document.getElementById("write_answer").innerHTML = "Please enter a number between 1 and 100.";
+        return;
+    }
+
+    const  { data : line} = await axios.get(
+        `http://192.168.1.105/nodejs/write/${lineNumber}`
+    );
+
+    document.getElementById('write_answer').innerHTML = data;
+
+
+    // let request = new XMLHttpRequest();
+    // request.open('POST', '/go/write?Line=' + lineNumber, true);
+    // request.onreadystatechange = function () {
+    //     let res = this.response.JSON
+    //     document.getElementById("sha_answer").innerHTML = res["Answer"] + res["Error"]
+    // }
+    // request.send(requestBody);
 }
