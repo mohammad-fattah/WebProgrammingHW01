@@ -12,7 +12,7 @@ app.post('/nodejs/sha', (req, res) => {
     const response = {
         result : req.body.first + req.body.second
     };
-    res.send(response);
+    res.send(hash.createHash('sha256').update(String(response.result)).digest('base64'));
 })
 
 
@@ -21,7 +21,7 @@ app.get('/nodejs/write/:id', (req, res) => {
         result :  String(fileText[req.params.id - 1]).replace('\r','')
     };
 
-    res.send(hash.createHash('sha256').update(String(response)).digest('base64'));
+    res.send(response.result);
 })
 
 const port = 3000;
