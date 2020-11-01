@@ -15,16 +15,16 @@
                 <header class="ui header">SHA256</header>
                 <div class="three fields">
                     <div class="field">
-                        <input type="number" name="M" placeholder="1'st Number">
+                        <input type="number" name="M" id="M" placeholder="1'st Number">
                     </div>
                     <div class="field">
-                        <input type="number" name="N" placeholder="2'nd Number">
+                        <input type="number" name="N" id="N" placeholder="2'nd Number">
                     </div>
                     <div class="field">
                         <div class="ui buttons">
-                            <buttom class="ui blue button" onclick="sha('go')">Go</buttom>
+                            <buttom class="ui blue button" onclick="shaGo()">Go</buttom>
                             <div class="or"></div>
-                            <buttom class="ui green button" onclick="sha('nodejs')">Node</buttom>
+                            <buttom class="ui green button" onclick="shaJS()">Node</buttom>
                         </div>
                     </div>
                 </div>
@@ -42,11 +42,11 @@
                 <div class="ui header">Write</div>
                 <div class="two fields">
                     <div class="field" id="line_input">
-                        <input type="text" placeholder="Line index">
+                        <input type="number" id = "LineNumber" placeholder="Line index">
                     </div>
                     <div class="field">
                         <div class="ui buttons">
-                            <buttom class="ui left floated blue button" onclick="writeIndexedLine('go')">Go</buttom>
+                            <buttom class="ui left floated blue button" onclick="writeIndexedLineGo()">Go</buttom>
                             <div class="or"></div>
                             <buttom class="ui right floated green button" onclick="writeIndexedLine('nodejs')">Node</buttom>
                         </div>
