@@ -28,9 +28,7 @@ func calculateSHA(body io.ReadCloser) Response {
 	response.Operation = "SHA256"
 	b, err := ioutil.ReadAll(body)
 	defer body.Close()
-	fmt.Println(string(b))
 	err = json.Unmarshal(b, &params)
-	//err = json.NewDecoder(body).Decode(&params)
 	if err != nil {
 		response.Error = "Unexpected Error <- Failed to parse json"
 		response.Answer = ""
