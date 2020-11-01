@@ -34,7 +34,7 @@ function shaGo() {
 }
 
 
-function writeIndexedLineNodeJs() {
+async function writeIndexedLineNodeJs() {
     let lineNumber = document.getElementById("LineNumber").value;
     if (lineNumber < 1  || lineNumber > 100) {
         document.getElementById("write_answer").innerHTML = "Please enter a number between 1 and 100.";
