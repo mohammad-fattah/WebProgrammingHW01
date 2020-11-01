@@ -24,10 +24,12 @@ type Response struct {
 
 func calculateSHA(body io.ReadCloser) Response {
 	var params Params
-	var err error
 	var response Response
 	response.Operation = "SHA256"
-	err = json.NewDecoder(body).Decode(&params)
+	b, err := ioutil.ReadAll(body)
+	defer body.Close()
+	err = json.Unmarshal(b, &params)
+	//err = json.NewDecoder(body).Decode(&params)
 	if err != nil {
 		response.Error = "Unexpected Error <- Failed to parse json"
 		response.Answer = ""
