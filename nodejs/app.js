@@ -28,7 +28,7 @@ app.post("/nodejs/sha", (req, res) => {
         sha: hash
             .createHash("sha256")
             .update(String(response.result))
-            .digest("base64"),
+            .digest("hex"),
     });
 });
 
