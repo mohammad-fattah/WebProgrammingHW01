@@ -10,22 +10,22 @@ location / {
 ```
 ```
 location /go/sha/ {
-    proxy_pass http://localhost:8080;    
+    proxy_pass http://localhost:8080/go/sha;    
 }
 ```
 ```
 location /go/write/ {
-    proxy_pass http://localhost:8080;    
+    proxy_pass http://localhost:8080/go/write;    
 }
 ```
 ```
 location /nodejs/sha/ {
-    proxy_pass http://localhost:3000;    
+    proxy_pass http://localhost:3000/nodejs/sha;    
 }
 ```
 ```
 location /nodejs/write/ {
-    proxy_pass http://localhost:3000;    
+    proxy_pass http://localhost:3000/nodejs/write;    
 }
 ```
 
