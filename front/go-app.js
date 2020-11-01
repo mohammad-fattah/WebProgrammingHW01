@@ -10,7 +10,6 @@ async function writeIndexedLineGo() {
     const line = await fetch(`/go/write?Line=${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
-            console.log(data);
             document.getElementById("write_answer").innerHTML = data;
         })
         .catch((error) => {
@@ -35,7 +34,7 @@ async function shaGo() {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-            document.getElementById("sha_answer").innerHTML = data.answer;
+            document.getElementById("sha_answer").innerHTML = data.Answer;
         })
         .catch((error) => {
             document.getElementById("sha_answer").innerHTML =
