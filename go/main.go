@@ -28,6 +28,7 @@ func calculateSHA(body io.ReadCloser) Response {
 	response.Operation = "SHA256"
 	b, err := ioutil.ReadAll(body)
 	defer body.Close()
+	fmt.Println(string(b))
 	err = json.Unmarshal(b, &params)
 	//err = json.NewDecoder(body).Decode(&params)
 	if err != nil {
@@ -53,9 +54,11 @@ func calculateSHA(body io.ReadCloser) Response {
 }
 
 func serveSHA(w http.ResponseWriter, r *http.Request) {
-	var response Response = calculateSHA(r.Body)
-	j, _ := json.Marshal(response)
-	fmt.Fprint(w, string(j))
+	if r.Method == "POST" {
+		var response Response = calculateSHA(r.Body)
+		j, _ := json.Marshal(response)
+		fmt.Fprint(w, string(j))
+	}
 }
 
 func getLine(i int) string {
