@@ -9,9 +9,12 @@ fs.readFile(
 const hash = require("crypto");
 const express = require("express");
 const { request } = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.post("/nodejs/sha", (req, res) => {
     const response = {
