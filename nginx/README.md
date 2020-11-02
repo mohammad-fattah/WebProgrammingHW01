@@ -37,7 +37,7 @@ firewall-cmd --permanent --add-service=http
 chmod +x /root/WebProgrammingHW01/go/main
 firewall-cmd --zone=public --add-port=8080/tcp --permanent
 firewall-cmd --zone=public --add-port=3000/tcp --permanent
-sudo chown -R $USER:$USER /var/www/localhost/front
-chcon -vR system_u:object_r:httpd_sys_content_t:s0 /var/www/localhost/
+sudo chown -R $USER:$USER /root/WebProgrammingHW01/front
+chcon -vR system_u:object_r:httpd_sys_content_t:s0 /root/WebProgrammingHW01/
 sudo setcap CAP_NET_BAND_SERVICE=+eip /root/WebProgrammingHW01/go/main
 ```
