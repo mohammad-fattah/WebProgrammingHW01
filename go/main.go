@@ -12,8 +12,8 @@ import (
 )
 
 type Params struct {
-	N string
-	M string
+	First  string
+	Second string
 }
 
 type Response struct {
@@ -34,15 +34,15 @@ func calculateSHA(body io.ReadCloser) Response {
 		response.Answer = ""
 		return response
 	}
-	m, err := strconv.Atoi(params.M)
+	m, err := strconv.Atoi(params.First)
 	if err != nil {
-		response.Error = "Number was expected as M"
+		response.Error = "Number was expected for both inputs!"
 		response.Answer = ""
 		return response
 	}
-	n, err := strconv.Atoi(params.N)
+	n, err := strconv.Atoi(params.Second)
 	if err != nil {
-		response.Error = "Number was expected as N"
+		response.Error = "Number was expected for both inputs!"
 		response.Answer = ""
 		return response
 	}
