@@ -30,4 +30,14 @@ systemctl start service_name
 systemctl enable service_name
 systemctl status service_name // make sure service is actived
 ```
-## SELinux
+## SELinux & Firewall
+Give HTTP access to port 8080 and 3000 and excluding them from a few of SELINUX rules. 
+```
+firewall-cmd --permanent --add-service=http
+chmod +x /root/WebProgrammingHW01/go/main
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=3000/tcp --permanent
+sudo chown -R $USER:$USER /var/www/localhost/front
+chcon -vR system_u:object_r:httpd_sys_content_t:s0 /var/www/localhost/
+sudo setcap CAP_NET_BAND_SERVICE=+eip /root/WebProgrammingHW01/go/main
+```
