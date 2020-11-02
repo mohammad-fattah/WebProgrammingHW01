@@ -24,10 +24,11 @@ app.post("/nodejs/sha", (req, res) => {
     //     return res.send({ Answer: "Number was expected for both inputs!" });
 
     const response = {
-        Operation: "SHA256",
         Answer: first + second,
-        Error: undefined,
     };
+
+    console.log(first, second);
+    console.log(resoponse.Answer);
 
     res.send({
         Operation: "SHA256",
@@ -35,7 +36,7 @@ app.post("/nodejs/sha", (req, res) => {
             .createHash("sha256")
             .update(String(response.Answer))
             .digest("hex"),
-        Error: undefined,
+        Error: "",
     });
 });
 
