@@ -29,10 +29,12 @@ app.post("/nodejs/sha", (req, res) => {
     };
 
     res.send({
-        sha: hash
+        Operation: "SHA256",
+        Answer: hash
             .createHash("sha256")
             .update(String(response.Answer))
             .digest("hex"),
+        Error: undefined,
     });
 });
 
