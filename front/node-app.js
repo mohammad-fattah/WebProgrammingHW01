@@ -28,7 +28,7 @@ async function shaNodeJs() {
         Second: +secondNumber,
     };
 
-    await fetch(`/nodejs/sha`, {
+    const line = await fetch(`/nodejs/sha`, {
         method: "POST",
         headers: {
             Accept: "application/json, text/plain, */*",
@@ -36,11 +36,7 @@ async function shaNodeJs() {
         },
         body: JSON.stringify(request, null, 2),
     })
-        .then((response) => {
-            console.log(response);
-            console.json(response);
-            return response.json();
-        })
+        .then((response) => response.json())
         .then((data) => {
             console.log(data);
             document.getElementById("sha_answer").innerHTML = data.Answer;
