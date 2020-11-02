@@ -23,8 +23,8 @@ async function shaGo() {
     let secondNumber = document.getElementById("second-number").value;
 
     const request = {
-        First: firstNumber,
-        second: secondNumber,
+        First: parseInt(firstNumber),
+        second: parseInt(secondNumber),
     };
 
     const line = await fetch(`/go/sha`, {
