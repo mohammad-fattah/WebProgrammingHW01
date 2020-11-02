@@ -1,0 +1,13 @@
+[Unit]
+Description=go-app
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=2s
+Environment=PORT=8080
+ExecStart=/user/local/bin/main
+WorkingDirectory=/root/WebProgrammingHW01/go
+
+[Install]
+WantedBy=multi-user.target
