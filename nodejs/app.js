@@ -23,18 +23,11 @@ app.post("/nodejs/sha", (req, res) => {
     let first = req.body.First;
     let second = req.body.Second;
 
-    // if (!(isPositiveInteger(first) && isPositiveInteger(second)))
-    //     return res.send({ Answer: "Number was expected for both inputs!" });
-    console.log(req.body);
-
     const response = {
         Answer: first + second,
     };
 
-    console.log(first, second);
-    console.log(response.Answer);
-
-    res.send({
+    res.json({
         Operation: "SHA256",
         Answer: hash
             .createHash("sha256")
@@ -46,7 +39,6 @@ app.post("/nodejs/sha", (req, res) => {
 
 app.get("/nodejs/write", (req, res) => {
     let { Line: lineNumber } = req.query;
-    console.log(req.query);
     if (lineNumber > 100 || lineNumber < 0)
         return res.send("Error: Invalid index");
     if (lineNumber > 100 || lineNumber < 0)
