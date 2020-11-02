@@ -1,6 +1,6 @@
 # WebProgrammingHW01 : Locust
 All tests are performed with the same parameters.
-Arguments are randomly generated
+Arguments are randomly generated.
 | Users count | Spawn rate |
 | :-: | :-: |
 | 500 | 100 |
