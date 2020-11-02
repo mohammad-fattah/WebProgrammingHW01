@@ -9,9 +9,20 @@ fs.readFile(
 const hash = require("crypto");
 const express = require("express");
 const { request } = require("express");
-const app = express();
+const bodyParser = require("./node_modules/body-parser");
 
-app.use(express.json());
+var app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+app.use(function (req, res) {
+    res.setHeader("Content-Type", "text/plain");
+    res.end(JSON.stringify(req.body, null, 2));
+});
 
 app.post("/nodejs/sha", (req, res) => {
     let first = req.body.First;
@@ -19,6 +30,7 @@ app.post("/nodejs/sha", (req, res) => {
 
     // if (!(isPositiveInteger(first) && isPositiveInteger(second)))
     //     return res.send({ Answer: "Number was expected for both inputs!" });
+    console.log(req.body);
 
     const response = {
         Answer: first + second,
