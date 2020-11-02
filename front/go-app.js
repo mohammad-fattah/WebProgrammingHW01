@@ -19,12 +19,12 @@ async function writeIndexedLineGo() {
 }
 
 async function shaGo() {
-    let firstNumber = document.getElementById("M").value;
-    let secondNumber = document.getElementById("N").value;
+    let firstNumber = document.getElementById("first-number").value;
+    let secondNumber = document.getElementById("second-number").value;
 
     const request = {
-        M: firstNumber,
-        N: secondNumber,
+        First: firstNumber,
+        second: secondNumber,
     };
 
     const line = await fetch(`/go/sha`, {

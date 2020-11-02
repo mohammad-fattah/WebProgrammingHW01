@@ -7,7 +7,7 @@ async function writeIndexedLineNodeJs() {
     }
 
     console.log(lineNumber);
-    const line = await fetch(`/nodejs/write/${lineNumber}`)
+    const line = await fetch(`/nodejs/write?Line=${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
             console.log(data);
@@ -20,12 +20,12 @@ async function writeIndexedLineNodeJs() {
 }
 
 async function shaNodeJs() {
-    let firstNumber = document.getElementById("M").value;
-    let secondNumber = document.getElementById("N").value;
+    let firstNumber = document.getElementById("first-number").value;
+    let secondNumber = document.getElementById("second-number").value;
 
     const request = {
-        first: firstNumber,
-        second: secondNumber,
+        First: firstNumber,
+        Second: secondNumber,
     };
 
     const line = await fetch(`/nodejs/sha`, {
@@ -35,7 +35,7 @@ async function shaNodeJs() {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-            document.getElementById("sha_answer").innerHTML = data.sha;
+            document.getElementById("sha_answer").innerHTML = data.Answer;
         })
         .catch((error) => {
             document.getElementById("sha_answer").innerHTML =
