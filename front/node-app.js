@@ -7,7 +7,7 @@ async function writeIndexedLineNodeJs() {
     }
 
     console.log(lineNumber);
-    const line = await fetch(`/nodejs/write/${lineNumber}`)
+    const line = await fetch(`/nodejs/write?Line=${lineNumber}`)
         .then((data) => data.text())
         .then(function (data) {
             console.log(data);
@@ -35,7 +35,7 @@ async function shaNodeJs() {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-            document.getElementById("sha_answer").innerHTML = data.sha;
+            document.getElementById("sha_answer").innerHTML = data.Answer;
         })
         .catch((error) => {
             document.getElementById("sha_answer").innerHTML =
