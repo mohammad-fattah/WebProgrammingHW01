@@ -20,8 +20,9 @@ app.post("/nodejs/sha", (req, res) => {
     let first = typereq.body.Firstreq.body.First;
     let second = req.body.Second;
 
-    if (!(isPositiveInteger(first) && isPositiveInteger(second)))
-        return res.send({ Answer: "Number was expected for both inputs!" });
+    // if (!(isPositiveInteger(first) && isPositiveInteger(second)))
+    //     return res.send({ Answer: "Number was expected for both inputs!" });
+
     const response = {
         Operation: "SHA256",
         Answer: first + second,
