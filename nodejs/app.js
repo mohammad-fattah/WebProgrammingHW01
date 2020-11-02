@@ -17,10 +17,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post("/nodejs/sha", (req, res) => {
-    let first = req.body.First;
+    let first = typereq.body.Firstreq.body.First;
     let second = req.body.Second;
 
-    if (!(Number.isInteger(first) && Number.isInteger(second)))
+    if (!(isPositiveInteger(first) && isPositiveInteger(second)))
         return res.send({ Answer: "Number was expected for both inputs!" });
     const response = {
         Operation: "SHA256",
@@ -53,3 +53,7 @@ app.get("/nodejs/write", (req, res) => {
 
 const port = 3000;
 app.listen(port, () => console.log(`listenin on port ${port}...`));
+
+function isPositiveInteger(x) {
+    return Number.isInteger(x) && x > 0;
+}
