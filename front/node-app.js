@@ -24,8 +24,8 @@ async function shaNodeJs() {
     let secondNumber = document.getElementById("second-number").value;
 
     const request = {
-        first: firstNumber,
-        second: secondNumber,
+        First: firstNumber,
+        Second: secondNumber,
     };
 
     const line = await fetch(`/nodejs/sha`, {
