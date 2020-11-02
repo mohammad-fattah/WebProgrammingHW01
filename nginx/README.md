@@ -1,31 +1,27 @@
 # WebProgrammingHW01 : NGINX
 This web server in Nginx-based. Here is Instruction how to deploy.
-# How to deploy
-1. Install Nginx.
-2. set these locations in `/etc/nginx/nginx.conf` using command `nano`
+## NGINX Config
+Add these locations to `/etc/nginx/nginx.conf`, or you can simply replace it with relevant file in this repository.
 ```
 location / {
-    root /root/project/WebProgrammingHW01/front;
+    root /root/WebProgrammingHW01/front;
+    index index.html index.htm;
 }
 ```
 ```
-location /go/sha/ {
-    proxy_pass http://localhost:8080/go/sha;    
+location /go/ {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_pass http://localhost:8080/go/;
 }
 ```
 ```
-location /go/write/ {
-    proxy_pass http://localhost:8080/go/write;    
+location /nodejs/{
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_pass http://localhost:3000/nodejs/;
 }
 ```
-```
-location /nodejs/sha/ {
-    proxy_pass http://localhost:3000/nodejs/sha;    
-}
-```
-```
-location /nodejs/write/ {
-    proxy_pass http://localhost:3000/nodejs/write;    
-}
-```
+## SELinux
+
 
