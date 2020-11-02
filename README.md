@@ -3,7 +3,7 @@
 ## How to deploy
 1. Clone project in `/root/`
 2. Set nginx.conf (as explained in the `/nginx/README.md`).
-3. Execute command `go build /root/WebProgrammingHW01/go/main.go`.
+3. Execute command `go build /root/WebProgrammingHW01/go/main.go`, then cop resault to `/user/local/bin/`.
 4. Setup system services (as explained in the `/nginx/README.md`).
 5. (Optional) Setting static ip might be helpful but is not neccessary.
 ## Load test
