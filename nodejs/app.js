@@ -28,7 +28,7 @@ app.post("/nodejs/sha", (req, res) => {
     };
 
     console.log(first, second);
-    console.log(resoponse.Answer);
+    console.log(response.Answer);
 
     res.send({
         Operation: "SHA256",
