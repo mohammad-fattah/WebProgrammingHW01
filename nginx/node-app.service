@@ -1,0 +1,14 @@
+[Unit]
+Description=node-app
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=2s
+Environment=PORT=3000
+ExecStart=/user/bin/node /root/WebProgrammingHW01/nodejs/app.js
+WorkingDirectory=/root/WebProgrammingHW01/nodejs
+
+[Install]
+WantedBy=multi-user.target
