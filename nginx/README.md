@@ -1,6 +1,6 @@
 # WebProgrammingHW01 : NGINX
 This web server in Nginx-based. Here is Instruction how to deploy.
-## NGINX Config
+## NGINX Configuration
 Add these locations to `/etc/nginx/nginx.conf`, or you can simply replace it with relevant file in this repository.
 ```
 location / {
@@ -23,6 +23,10 @@ location /nodejs/{
 }
 ```
 ## Systemd Services
+```
+systemctl daemon-reload
+systemctl start service_name
+systemctl enable service_name
+systemctl status service_name // make sure service is actived
+```
 ## SELinux
-
-
