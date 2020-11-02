@@ -19,11 +19,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(function (req, res) {
-    res.setHeader("Content-Type", "text/plain");
-    res.end(JSON.stringify(req.body, null, 2));
-});
-
 app.post("/nodejs/sha", (req, res) => {
     let first = req.body.First;
     let second = req.body.Second;
