@@ -24,13 +24,13 @@ async function shaNodeJs() {
     let secondNumber = document.getElementById("second-number").value;
 
     const request = {
-        First: firstNumber,
-        Second: secondNumber,
+        First: +firstNumber,
+        Second: +secondNumber,
     };
 
-    const line = await fetch(`/nodejs/sha`, {
+    await fetch(`/nodejs/sha`, {
         method: "POST",
-        body: JSON.stringify(request),
+        body: JSON.stringify(request, null, 2),
     })
         .then((response) => response.json())
         .then((data) => {
