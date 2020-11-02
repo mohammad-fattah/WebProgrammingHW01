@@ -19,11 +19,15 @@ locust --exclude-tags lang_tag algorythm_tag
 | /go/write | 1568 | 1500 | 159.9 |
 
 ## Screenshots
+### NodeJS SHA256:
 ![nodejs_sha](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/nodejs_sha.png)
 ![nodejs_sha_graph](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/nodejs_sha_graph.png)
+### NodeJS Write
 ![nodejs_write](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/nodejs_write.png)
 ![nodejs_write_graph](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/nodejs_write_graph.png)
+### Go SHA256
 ![go_sha](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/go_sha.png)
 ![go_sha_graph](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/go_sha_graph.png)
+### Go Write
 ![go_write](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/go_write.png)
 ![go_write_graph](https://github.com/AryanAhadinia/WebProgrammingHW01/blob/main/media/go_write_graph.png)
