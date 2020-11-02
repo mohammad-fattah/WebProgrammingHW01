@@ -23,6 +23,7 @@ location /nodejs/{
 }
 ```
 ## Systemd Services
+Copy .service files to `/lib/systemd/system/`, then use these commands for each to start them.
 ```
 systemctl daemon-reload
 systemctl start service_name
