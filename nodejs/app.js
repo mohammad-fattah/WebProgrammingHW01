@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post("/nodejs/sha", (req, res) => {
-    let first = typereq.body.Firstreq.body.First;
+    let first = req.body.First;
     let second = req.body.Second;
 
     // if (!(isPositiveInteger(first) && isPositiveInteger(second)))
